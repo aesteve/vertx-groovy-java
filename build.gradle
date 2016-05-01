@@ -1,0 +1,22 @@
+plugins {
+	id 'groovy'
+}
+
+repositories {
+	mavenCentral()
+	maven {
+		url = 'https://oss.sonatype.org/content/repositories/snapshots/'
+	}
+}
+
+dependencies {
+	testCompile "io.vertx:vertx-core:$vertxVersion"
+	testCompile "io.vertx:vertx-web:$vertxVersion"
+	testCompile "io.vertx:vertx-unit:$vertxVersion"
+	
+	testCompile 'junit:junit:4.12'
+}
+
+task wrapper(type: Wrapper) {
+	gradleVersion = '2.13'
+}
